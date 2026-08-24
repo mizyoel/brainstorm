@@ -1,4 +1,4 @@
-# 🧠 brainstorm
+# 🧠 /brainstorm
 
 [![GitHub](https://img.shields.io/badge/GitHub-mizyoel%2Fbrainstorm-181717?logo=github)](https://github.com/mizyoel/brainstorm)
 [![Install with npx](https://img.shields.io/badge/install-npx%20skills%20add-CB3837?logo=npm)](#installation)
