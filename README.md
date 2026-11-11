@@ -9,11 +9,65 @@
   <img src="brainstorm-skill.webp" alt="/brainstorm skill" width="320">
 </p>
 
-> **Don't code the first idea. Brainstorm the right one.**
+> **Start with a rough idea. Leave with a clear direction.**
 
-`/brainstorm` is a professional brainstorming skill for coding agents. It turns rough features, UX problems, data challenges, and architecture questions into **clear directions, explicit trade-offs, and implementation-ready decisions**.
+`/brainstorm` helps a coding agent sit with a rough feature, UX problem, data question, or architecture choice until the direction is clear.
 
 ## Installation
+
+### GitHub CLI (no `npx` required)
+
+With GitHub CLI 2.90.0 or later, install the skill for your user so it is available across projects:
+
+```bash
+gh skill install mizyoel/brainstorm SKILL.md --agent claude-code --scope user
+gh skill install mizyoel/brainstorm SKILL.md --agent github-copilot --scope user
+```
+
+Omit `--scope user` to install into the current repository instead.
+
+### Manual install with Git
+
+Clone the repository into the skill directory for your agent. The repository itself is the skill folder, so keep its `SKILL.md` and `references/` together.
+
+| Agent | Project install | Personal install |
+| --- | --- | --- |
+| Claude Code | `.claude/skills/brainstorm` | `~/.claude/skills/brainstorm` |
+| GitHub Copilot | `.agents/skills/brainstorm` or `.github/skills/brainstorm` | `~/.agents/skills/brainstorm` or `~/.copilot/skills/brainstorm` |
+
+For a personal Claude Code install on Linux:
+
+```bash
+mkdir -p "$HOME/.claude/skills"
+git clone https://github.com/mizyoel/brainstorm.git "$HOME/.claude/skills/brainstorm"
+```
+
+For a personal GitHub Copilot install on Linux:
+
+```bash
+mkdir -p "$HOME/.agents/skills"
+git clone https://github.com/mizyoel/brainstorm.git "$HOME/.agents/skills/brainstorm"
+```
+
+Use the same commands in Windows PowerShell, replacing `mkdir -p` with:
+
+```powershell
+New-Item -ItemType Directory -Force "$HOME/.claude/skills" | Out-Null
+```
+
+or, for Copilot:
+
+```powershell
+New-Item -ItemType Directory -Force "$HOME/.agents/skills" | Out-Null
+```
+
+Then run the matching `git clone` command above in PowerShell. For a project install, replace the destination with the corresponding project path from the table; run the command from your project directory.
+
+### Download without a command line
+
+On the repository page, choose **Code → Download ZIP**, extract it, then move the extracted skill folder into one of the skill directories in the table. Make sure `SKILL.md` is directly inside `brainstorm`, alongside `references/`.
+
+### Install with `npx`
 
 ```bash
 npx skills add mizyoel/brainstorm
@@ -49,16 +103,11 @@ It helps prevent polished implementations of poorly defined ideas.
 4. **Compares trade-offs** — usability, complexity, scalability, risk, and maintainability.
 5. **Recommends a direction** — with clear reasoning and an actionable plan.
 
-Questions stay short and decision-oriented:
+Here's a doodle of `/brainstorm` pointed at its own repo. The inspect findings come from this `SKILL.md`; the options and answers are sketched to show the flow.
 
-```text
-What should happen when switching experiments?
-
-A. Switch immediately
-B. Warn only when work is unsaved
-C. Always require confirmation
-D. Keep multiple experiments open
-```
+<p align="center">
+  <img src="assets/example-session.svg" alt="Doodle of /brainstorm on an idea ripeness meter: inspect the repo, compare three directions, answer two short questions, then choose what happens next" width="760">
+</p>
 
 ## What it can brainstorm
 

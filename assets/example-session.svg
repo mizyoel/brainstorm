@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="720" viewBox="0 0 900 720" role="img" aria-labelledby="t d">
+  <title id="t">Doodle of a /brainstorm session about an idea ripeness meter</title>
+  <desc id="d">Hand-drawn doodle: /brainstorm inspects its own SKILL.md, compares three ways to add an idea ripeness meter, asks two decision questions, then offers an exploration control.</desc>
+  <defs>
+    <filter id="wob" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="7" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="4"/>
+    </filter>
+    <filter id="wob2" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="2" seed="3" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="1"/>
+    </filter>
+  </defs>
+  <style>
+    .paper { fill: #e8e4e0; }
+    .ink { stroke: #35322f; stroke-width: 2.4; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+    .thin { stroke: #35322f; stroke-width: 1.6; fill: none; stroke-linecap: round; }
+    .box { fill: #f4f1ee; stroke: #35322f; stroke-width: 2.4; stroke-linejoin: round; }
+    .pick { fill: #d8d3ce; stroke: #35322f; stroke-width: 1.6; }
+    .hand { font-family: "Segoe Print", "Bradley Hand", "Chalkboard SE", "Comic Sans MS", "Comic Neue", cursive, sans-serif; fill: #2b2926; font-size: 18px; }
+    .big { font-size: 24px; font-weight: bold; }
+    .small { font-size: 15px; fill: #6b665f; }
+  </style>
+  <rect class="paper" width="900" height="720"/>
+
+  <g filter="url(#wob)">
+    <path class="thin" d="M36 60 Q 300 68 560 58"/>
+
+    <!-- banana rider doodle -->
+    <path class="ink" d="M706 78 C 700 126 770 150 842 112 C 826 140 760 168 712 138 C 690 122 692 96 706 78 Z"/>
+    <circle class="ink" cx="772" cy="52" r="15"/>
+    <path class="thin" d="M760 36 L 764 26 L 770 33 L 776 25 L 782 36 Z"/>
+    <path class="thin" d="M772 67 L 770 96 M770 76 L 790 62 M770 96 L 760 116"/>
+    <circle cx="767" cy="50" r="1.6" fill="#35322f"/><circle cx="778" cy="50" r="1.6" fill="#35322f"/>
+    <path class="thin" d="M767 59 Q 772 55 777 59"/>
+    <path class="thin" d="M800 40 q 8 -10 14 0 q -6 4 -6 10"/>
+
+    <!-- step markers and boxes -->
+    <circle class="ink" cx="52" cy="102" r="15"/>
+    <rect class="box" x="36" y="124" width="610" height="92" rx="12"/>
+    <circle class="ink" cx="52" cy="256" r="15"/>
+    <rect class="box" x="36" y="278" width="270" height="110" rx="12"/>
+    <rect class="box" x="316" y="278" width="270" height="110" rx="12"/>
+    <rect class="box" x="596" y="278" width="270" height="110" rx="12"/>
+    <circle class="ink" cx="52" cy="426" r="15"/>
+    <rect class="box" x="36" y="448" width="420" height="170" rx="12"/>
+    <rect class="box" x="476" y="448" width="390" height="170" rx="12"/>
+    <rect class="pick" x="50" y="490" width="392" height="30" rx="10"/>
+    <rect class="pick" x="490" y="490" width="362" height="30" rx="10"/>
+    <circle class="ink" cx="52" cy="660" r="15"/>
+    <path class="ink" d="M92 646 q 360 -10 770 0 q 6 24 0 40 q -380 10 -770 0 q -6 -20 0 -40 z"/>
+  </g>
+
+  <g filter="url(#wob2)">
+    <text class="hand big" x="36" y="48">/brainstorm add an idea ripeness meter</text>
+
+    <text class="hand big" x="45" y="109">1</text>
+    <text class="hand big" x="80" y="109">Inspect</text>
+    <text class="hand small" x="190" y="109">(its own SKILL.md, for real)</text>
+    <text class="hand" x="52" y="156">Exploration Control is written twice (L370, L478)</text>
+    <text class="hand" x="52" y="182">Final Action Control (L548) hands off to /design</text>
+    <text class="hand" x="52" y="208">nothing says when an idea is ripe enough to leave</text>
+
+    <text class="hand big" x="45" y="263">2</text>
+    <text class="hand big" x="80" y="263">Directions</text>
+    <text class="hand" x="52" y="308">A  Ripeness bar</text>
+    <text class="hand small" x="52" y="334">green &#8594; yellow &#8594; spotty</text>
+    <text class="hand small" x="52" y="360">shown every round</text>
+    <text class="hand" x="332" y="308">B  Ripe = stop rule</text>
+    <text class="hand small" x="332" y="334">meter decides when to</text>
+    <text class="hand small" x="332" y="360">offer "converge"</text>
+    <text class="hand" x="612" y="308">C  No meter</text>
+    <text class="hand small" x="612" y="334">trust the convergence</text>
+    <text class="hand small" x="612" y="360">gate we already have</text>
+
+    <text class="hand big" x="45" y="433">3</text>
+    <text class="hand big" x="80" y="433">Decision round</text>
+    <text class="hand small" x="262" y="433">2 questions, 1 batch</text>
+    <text class="hand" x="52" y="478">What does "ripe" mean?</text>
+    <text class="hand" x="60" y="511">&#9733; Enough signal to converge</text>
+    <text class="hand" x="60" y="548">Ready to hand off to /design</text>
+    <text class="hand" x="60" y="578">Just a fun label</text>
+    <text class="hand" x="492" y="478">Where should it show up?</text>
+    <text class="hand" x="500" y="511">&#9733; Every decision round</text>
+    <text class="hand" x="500" y="548">Final plan only</text>
+    <text class="hand" x="500" y="578">Only when I ask</text>
+
+    <text class="hand big" x="45" y="667">4</text>
+    <text class="hand" x="112" y="672">Converge &#9733;  /  another direction  /  deeper questions  /  challenge assumptions</text>
+  </g>
+</svg>
